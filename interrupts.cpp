@@ -4,7 +4,7 @@
  * @author Sasisekhar Govind
  *
  * @author James Noel
- *
+ * @author Colin Calhoun
  */
 #include "interrupts.hpp"
 
@@ -73,7 +73,31 @@ int main(int argc, char** argv) {
 
         } else if (activity == "END_IO") {
 
-        // end interrupt
+            execution += std::to_string(current_time) + ", " + std::to_string(delays[duration_intr]) + 
+            ", end of I/O " + std::to_string(duration_intr) + ": interrupt\n";
+
+            current_time += delays[duration_intr];
+
+            auto [exec_content, new_time] = intr_boilerplate(current_time, duration_intr, context_save_time, vectors);
+
+            execution += exec_content; // add the execution content to the execution string
+            current_time = new_time; // set the current time equal to the new time (current time + execution duration)
+
+            execution += std::to_string(current_time) + ", " + std::to_string(isr_time) + ", execute ISR body\n";
+
+            current_time += isr_time;
+
+            execution += std::to_string(current_time) + ", " + std::to_string(iret_time) + ", IRET\n";
+
+            current_time += iret_time;
+
+            execution += std::to_string(current_time) + ", " + std::to_string(context_save_time) + ", Context restored\n";
+
+            current_time += context_save_time;
+
+            execution += std::to_string(current_time) + ", " + std::to_string(mode_switch_time) + " Switch to user mode\n";
+
+            current_time += mode_switch_time;
 
         } else {
             execution += std::to_string(current_time) + ", 0, unknown activity:" + activity + "\n";
