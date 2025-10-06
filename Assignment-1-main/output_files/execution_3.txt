@@ -1,2 +1,61 @@
-File content overwritten successfully.
-Output generated in execution.txt
+0, 50, CPU burst complete
+50, 1, switch to kernel mode
+51, 10, context saved
+61, 1, find vector 7 in memory position 0x000E
+62, 1, load address 0X00BD into the PC
+63, 300, execute ISR body
+...
+363, 1, IRET
+364, 10, Context restored
+374, 1 Switch to user mode
+375, 152, end of I/O 7: interrupt
+527, 1, switch to kernel mode
+528, 10, context saved
+538, 1, find vector 7 in memory position 0x000E
+539, 1, load address 0X00BD into the PC
+540, 300, execute ISR body
+...
+840, 1, IRET
+841, 10, Context restored
+851, 1 Switch to user mode
+852, 100, CPU burst complete
+952, 1, switch to kernel mode
+953, 10, context saved
+963, 1, find vector 12 in memory position 0x0018
+964, 1, load address 0X03B9 into the PC
+965, 300, execute ISR body
+...
+1265, 1, IRET
+1266, 10, Context restored
+1276, 1 Switch to user mode
+1277, 145, end of I/O 12: interrupt
+1422, 1, switch to kernel mode
+1423, 10, context saved
+1433, 1, find vector 12 in memory position 0x0018
+1434, 1, load address 0X03B9 into the PC
+1435, 300, execute ISR body
+...
+1735, 1, IRET
+1736, 10, Context restored
+1746, 1 Switch to user mode
+1747, 60, CPU burst complete
+1807, 1, switch to kernel mode
+1808, 10, context saved
+1818, 1, find vector 20 in memory position 0x0028
+1819, 1, load address 0X07B7 into the PC
+1820, 300, execute ISR body
+...
+2120, 1, IRET
+2121, 10, Context restored
+2131, 1 Switch to user mode
+2132, 1000, end of I/O 20: interrupt
+3132, 1, switch to kernel mode
+3133, 10, context saved
+3143, 1, find vector 20 in memory position 0x0028
+3144, 1, load address 0X07B7 into the PC
+3145, 300, execute ISR body
+...
+3445, 1, IRET
+3446, 10, Context restored
+3456, 1 Switch to user mode
+3457, 40, CPU burst complete
